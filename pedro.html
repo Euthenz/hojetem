@@ -1,0 +1,63 @@
+<html>
+<head>
+<style>
+    h1 {
+color: white;
+    }
+/* Estilo do botão */
+#button {
+  position: absolute;
+  width: 100px;
+  height: 50px;
+  background-color: rgb(240, 60, 75);
+  color: white;
+  font-size: 20px;
+}
+body {
+    background-color: rgb(90, 1, 1);
+}
+#button2 {
+    position: absolute;
+  width: 100px;
+  height: 50px;
+  background-color: rgb(240, 60, 75);
+  color: white;
+  font-size: 20px;
+}
+</style>
+<script>
+// Função para gerar um número aleatório entre min e max
+function getRandom(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// Função para mover o botão para uma posição aleatória
+function moveButton() {
+  // Pegar o botão pelo seu id
+  var button = document.getElementById("button");
+  // Pegar o tamanho da janela
+  var windowWidth = window.innerWidth;
+  var windowHeight = window.innerHeight;
+  // Pegar o tamanho do botão
+  var buttonWidth = button.offsetWidth;
+  var buttonHeight = button.offsetHeight;
+  // Gerar uma posição aleatória para o botão
+  var x = getRandom(0, windowWidth - buttonWidth);
+  var y = getRandom(0, windowHeight - buttonHeight);
+  // Alterar o estilo do botão para refletir a nova posição
+  button.style.left = x + "px";
+  button.style.top = y + "px";
+}
+function abrirLink() {
+            window.open('https://www.youtube.com/watch?v=KXw8CRapg7k', '_blank')}
+</script>
+</head>
+<body>
+    <h1>
+        Hoje tem??
+    </h1>
+    <button id="button2" onclick="abrirLink()">Sim</button>
+<!-- Botão com o evento de mouseover que chama a função moveButton -->
+<button id="button" onmouseover="moveButton()">não</button>
+</body>
+</html>
